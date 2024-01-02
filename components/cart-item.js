@@ -23,7 +23,7 @@ export class CartItem extends LitElement {
             }
 
             h3 {
-                font-weight: 400;
+                font-weight: 300;
                 margin-top: 0px;
                 margin-bottom: 0px;
             }
