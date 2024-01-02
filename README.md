@@ -6,4 +6,4 @@ A shopping cart element with 3 different products to buy. Each product component
 
 ## How to start
 In order to do so, there's a web development server installed in the project. After downloading the project folder, just open the terminal, move inside the folder and execute the command:
-> npm run start
+`npm run start`
