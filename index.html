@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lit components</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@100&family=Poppins:wght@200;300;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script defer src="https://kit.fontawesome.com/24ff0aa52c.js" crossorigin="anonymous"></script>
+</head>
+
+<body
+    style="padding: 10px; font-family: 'DM Serif Display', serif; font-family: 'Montserrat', sans-serif; font-family: 'Poppins', sans-serif;">
+    <div class="w-[500px] max-sm:w-full m-auto mt-10">
+        <h1 class="text-2xl mb-5"><i class="fa-solid fa-cart-shopping"></i> Shopping cart</h1>
+        <cart-item class="shopping-component" productName="Zapatillas Nike" productPrice="24"></cart-item>
+        <cart-item class="shopping-component" productName="Teclado inalámbrico" productPrice="13"></cart-item>
+        <cart-item class="shopping-component" productName="Baterías recargables" productPrice="4"></cart-item>
+    </div>
+    <div class="w-[500px] bg-slate-900 rounded max-sm:w-full m-auto p-5 flex justify-between my-center">
+        <button id="final-price-button"
+            class="text-white border rounded px-5 py-2 hover:bg-slate-50 hover:text-slate-900 transition-all duration-100">Calcular
+            total (WIP) <i class="fa-solid fa-arrow-right"></i></button>
+        <h3 class="text-white text-lg font-semibold">0€</h3>
+    </div>
+
+    <script src="/components/cart-item.js" type="module"></script>
+    <script>
+        document.getElementById('final-price-button').addEventListener('click', function () {
+            console.log(document.getElementsByClassName('shopping-component'));
+        })
+    </script>
+</body>
+
+</html>
