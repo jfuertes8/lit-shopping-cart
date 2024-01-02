@@ -28,6 +28,13 @@ export class CartItem extends LitElement {
                 margin-bottom: 0px;
             }
 
+            h4 {
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
             h5 {
                 font-size: 24px;
                 margin: 0;
@@ -37,25 +44,29 @@ export class CartItem extends LitElement {
             h6 {
                 font-size: 20px;
                 margin: 0;
-                padding-left: 10px;
-                padding-right: 10px;
             }
 
             .top-info {
                 padding: 0;
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+            }
+
+            .top-text {
+                margin: 0;
+                padding: 0;
+                flex: 1;
+                margin-left: 10px;
             }
 
             p {
-                font-size: 12px;
+                font-size: 11px;
                 font-weight: 300;
             }
 
             button {
-                width:50px;
-                height: 50px;
+                width:40px;
+                height: 40px;
                 border-radius: 100px;
                 border: none;
                 cursor: pointer;
@@ -91,7 +102,8 @@ export class CartItem extends LitElement {
     static properties = {
         productName: { type: String },
         productCounter: { type: Number },
-        productPrice: { type: Number }
+        productPrice: { type: Number },
+        imageUrl: { type: String }
     }
 
     //Con el constructor inicializamos las variables con un valor default
@@ -100,9 +112,9 @@ export class CartItem extends LitElement {
         super();
         this.productName = '';
         this.productCounter = 0;
-        this.productPrice = 0
+        this.productPrice = 0;
+        this.imageUrl = '';
     }
-
 
 
     //Con esto renderizamos lo que queramos que muestre el componente en el HTML
@@ -111,14 +123,17 @@ export class CartItem extends LitElement {
         return html`
             <div>
                 <div class="top-info">
-                    <h2>${this.productName}</h2>
+                    <img src="${this.imageUrl}" width="100px" height="100px" />
+                    <div class="top-text">
+                        <h2>${this.productName}</h2>
+                        <p>Esto es una descripción de cada uno de los productos que vas a añadir a tu lista de la compra</p>
+                    </div>
                     <h3>${this.productPrice} €</h3>
                 </div>
-                <p>Esto es una descripción de cada uno de los productos que vas a añadir a tu lista de la compra</p>
                 <div class="bottom-container">
                     <div class="buttons">
                         <button @click=${this.increment}><h6>+</h6></button>
-                        <h6>${this.productCounter}</h6>
+                        <h4>${this.productCounter}</h4>
                         <button @click=${this.decrement}><h6>-</h6></button>
                     </div>
                     <div class="total">
