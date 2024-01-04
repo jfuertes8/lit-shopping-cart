@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lit components | Login form</title>
+    <link rel="icon" type="image/x-icon" href="/assets/flame.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@100&family=Poppins:wght@200;300;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script defer src="https://kit.fontawesome.com/24ff0aa52c.js" crossorigin="anonymous"></script>
+</head>
+
+<body
+    style="padding: 10px; font-family: 'DM Serif Display', serif; font-family: 'Montserrat', sans-serif; font-family: 'Poppins', sans-serif;">
+
+    <div class="w-[500px] max-sm:w-full m-auto mt-10">
+        <nav class="flex justify-between">
+            <h1 class="text-2xl mb-3"><i class="fa-solid fa-fire-flame-curved"></i> Lit</h1>
+            <div class="flex gap-6 text-sm my-auto">
+                <a href="/index.html" class="mb-3 hover:text-[#ff5733]"><i class="fa-solid fa-cart-shopping"></i>
+                    Shopping Cart</a>
+                <a href="/login.html" class="mb-3 hover:text-[#ff5733]"><i class="fa-solid fa-circle-user"></i> Login
+                    form</a>
+            </div>
+        </nav>
+        <hr class="mb-3">
+        <login-container></login-container>
+    </div>
+
+    <script src="/components/login-container.js" type="module"></script>
+</body>
+
+</html>

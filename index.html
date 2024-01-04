@@ -17,8 +17,18 @@
 
 <body
     style="padding: 10px; font-family: 'DM Serif Display', serif; font-family: 'Montserrat', sans-serif; font-family: 'Poppins', sans-serif;">
+
     <div class="w-[500px] max-sm:w-full m-auto mt-10">
-        <h1 class="text-2xl mb-5"><i class="fa-solid fa-cart-shopping"></i> Shopping cart</h1>
+        <nav class="flex justify-between">
+            <h1 class="text-2xl mb-3"><i class="fa-solid fa-fire-flame-curved"></i> Lit</h1>
+            <div class="flex gap-6 text-sm my-auto">
+                <a href="/index.html" class="mb-3 hover:text-[#ff5733]"><i class="fa-solid fa-cart-shopping"></i>
+                    Shopping Cart</a>
+                <a href="/login.html" class="mb-3 hover:text-[#ff5733]"><i class="fa-solid fa-circle-user"></i> Login
+                    form</a>
+            </div>
+        </nav>
+        <hr class="mb-3">
         <cart-item name="shopping-component" productName="Zapatillas Nike" productPrice="24"
             imageUrl="./assets/nike.jpg"></cart-item>
         <cart-item name="shopping-component" productName="Teclado inalámbrico" productPrice="13"
