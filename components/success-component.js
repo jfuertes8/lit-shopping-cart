@@ -24,12 +24,16 @@ export class SuccessComponent extends LitElement {
                 background-color: #ff5733;
                 color: #ffffff;
             }
+
+            p {
+                font-weight: 300;
+            }
         `
     ];
 
     render() {
         return html`
-            <img src="./assets/success.jpg" width="100%" height="auto" />
+            <img src="./assets/success.jpg" width="75%" height="auto" />
             <h2>Ole, ¡Iniciaste sesión!</h2>
             <p>Has iniciado sesión correctamente. Ahora ya puedes realizar todas las operativas de un usuario logado.</p>
             <button @click="${this._goBack}">Volver al inicio de sesión</button>

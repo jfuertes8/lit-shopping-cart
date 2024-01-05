@@ -29,6 +29,7 @@
             </div>
         </nav>
         <hr class="mb-3">
+        <!--Los 3 elementos que vemos son componentes web hechos con Lit. Los configuramos en un fichero JS aparte y los incrustamos en el código-->
         <cart-item name="shopping-component" productName="Zapatillas Nike" productPrice="24"
             imageUrl="./assets/nike.jpg"></cart-item>
         <cart-item name="shopping-component" productName="Teclado inalámbrico" productPrice="13"
@@ -43,14 +44,16 @@
         <h3 id="total-price" class="text-white text-5xl">0 €</h3>
     </div>
 
+    <!--Mediante este script cargamos el elemento cart-item en el HTML como un componente web-->
     <script src="/components/cart-item.js" type="module"></script>
+
+    <!--Con este script accedemos a las propiedades de los componentes y calculamos el precio total-->
     <script>
         document.getElementById('final-price-button').addEventListener('click', function () {
             let finalPrice = 0;
             const elements = document.getElementsByName('shopping-component')
             for (i = 0; i < elements.length; i++) {
-                let price = elements[i].productCounter * elements[i].productPrice;
-                finalPrice = finalPrice + price;
+                finalPrice = finalPrice + (elements[i].productCounter * elements[i].productPrice);
             }
 
             document.getElementById('total-price').innerHTML = finalPrice + " €"

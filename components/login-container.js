@@ -18,10 +18,12 @@ export class LoginContainer extends LitElement {
         `
     ];
 
+    //Con este componente creamos un container que decidirá si mostrar el formulario de login
+    //o la pantalla de éxito
     render() {
         return html`
-            ${this.success 
-                ? html`<success-component @signal="${this._hiddenLogin}"></success-component>` 
+            ${this.success
+                ? html`<success-component @signal="${this._hiddenLogin}"></success-component>`
                 : html`<login-form @sign="${this._hiddenLogin}"></login-form>`
             }
         `;

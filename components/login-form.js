@@ -89,13 +89,16 @@ export class LoginForm extends LitElement {
         `;
     }
 
+    //Al hacer click en el botón se ejecuta esta función
     _login() {
         const email = this.shadowRoot.querySelector("#email").value;
         const password = this.shadowRoot.querySelector("#password").value;
 
         if (!!email && !!password) {
+            //Definimos un evento que lo va a leer el container
             this.dispatchEvent(new CustomEvent('sign', { detail: { login: true }, bubbles: true, composed: true }));
         } else {
+            //Importante, aqui no es 'document' porque estamos en un shadowRoot
             this.shadowRoot.getElementById('error-block').style.display = 'block';
         }
     }

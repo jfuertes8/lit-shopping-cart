@@ -118,7 +118,7 @@ export class CartItem extends LitElement {
 
 
     //Con esto renderizamos lo que queramos que muestre el componente en el HTML
-    //Hay que usar 'this' para que sepa a qué instancia pertenece la variable
+    //Hay que usar 'this' para acceder a las variables del componente
     render() {
         return html`
             <div>
@@ -144,10 +144,12 @@ export class CartItem extends LitElement {
         `;
     }
 
+    //Función para incrementar el contador
     increment() {
         this.productCounter++;
     }
 
+    //Función para reducir el contador y nunca por debajo de cero
     decrement() {
         if (this.productCounter > 0) {
             this.productCounter--;
