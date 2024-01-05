@@ -20,6 +20,10 @@ export class LoginForm extends LitElement {
                 font-size: 14px;
             }
 
+            p#intro-text {
+                margin-bottom: 15px;
+            }
+
             input {
                 width: 100%;
                 box-sizing: border-box;
@@ -49,13 +53,25 @@ export class LoginForm extends LitElement {
                 height: 45px;
                 transition: 0.15s;
             }
+
+            .error-container {
+                margin-top: 20px;
+                background-color: #ffcfd2;
+                border-radius: 10px;
+                padding: 10px;
+                display: none;
+            }
+
+            p {
+                margin: 0;
+            }
         `
     ];
 
     render() {
         return html`
             <h2>Login</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lorem tellus, fermentum id ultricies nec, scelerisque viverra metus. Donec eu euismod libero, nec laoreet eros.</p>
+            <p id="intro-text">Inicia sesión en la web para poder acceder al detalle de tu perfil y poder realizar acciones en tu sesión privada.</p>
             <div>
                 <label>Email</label>
                 <input id="email" type="email" placeholder="ejemplo@ejemplo.com" />
@@ -66,6 +82,10 @@ export class LoginForm extends LitElement {
             </div>
             
             <button @click="${this._login}">Iniciar sesión</button>
+
+            <div id="error-block" class="error-container">
+                <p>Vaya... necesitamos que introduzcas tu email y contraseña para poder iniciar sesión</p>
+            </div>
         `;
     }
 
@@ -73,8 +93,10 @@ export class LoginForm extends LitElement {
         const email = this.shadowRoot.querySelector("#email").value;
         const password = this.shadowRoot.querySelector("#password").value;
 
-        if(!!email && !!password) {
-            this.dispatchEvent(new CustomEvent('sign', { detail: {login: true}, bubbles: true, composed: true}));
+        if (!!email && !!password) {
+            this.dispatchEvent(new CustomEvent('sign', { detail: { login: true }, bubbles: true, composed: true }));
+        } else {
+            this.shadowRoot.getElementById('error-block').style.display = 'block';
         }
     }
 }

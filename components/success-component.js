@@ -31,13 +31,13 @@ export class SuccessComponent extends LitElement {
         return html`
             <img src="./assets/success.jpg" width="100%" height="auto" />
             <h2>Ole, ¡Iniciaste sesión!</h2>
-            <p>Has iniciado sesión correctamente. Ahora ve a hacer cosas maravillosas con el tiempo que se te ha dado</p>
+            <p>Has iniciado sesión correctamente. Ahora ya puedes realizar todas las operativas de un usuario logado.</p>
             <button @click="${this._goBack}">Volver al inicio de sesión</button>
         `;
     }
 
     _goBack() {
-        this.dispatchEvent(new CustomEvent('signal', { detail: {login: true}, bubbles: true, composed: true}));
+        this.dispatchEvent(new CustomEvent('signal', { detail: { login: true }, bubbles: true, composed: true }));
     }
 }
 customElements.define('success-component', SuccessComponent);
